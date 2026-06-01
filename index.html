@@ -190,7 +190,10 @@ body{font-family:'Marhey','Tajawal',sans-serif;direction:rtl;text-align:right;ba
 .summary-list{margin-bottom:0.3rem;}
 .summary-item{display:flex;align-items:flex-start;gap:8px;padding:12px 0;border-bottom:2px dashed #A8D4F5;}
 .summary-item:last-child{border-bottom:none;}
-.review-item{background:#f0e6ff;border-radius:12px;padding:4px 8px;}
+.review-item{background:#7b2d8b;border-radius:12px;padding:8px 10px;border:3px solid #FFD700;}
+.review-item .summary-q{color:#fff;}
+.review-item .summary-a{background:#FFD700;color:#0C447C;}
+.review-item .prize-tag{color:#FFD700;}
 .summary-body{flex:1;}
 .summary-q{font-size:35px;color:#0C447C;margin-bottom:4px;font-weight:700;}
 .summary-a{font-size:35px;color:#185FA5;background:#A8D4F5;padding:3px 8px;border-radius:50px;display:inline-block;font-weight:700;}
@@ -220,6 +223,9 @@ body{font-family:'Marhey','Tajawal',sans-serif;direction:rtl;text-align:right;ba
   <button onclick="openAdmin()" style="background:#FFD700;color:#0C447C;border:4px solid #fff;border-radius:50px 44px 48px 42px / 42px 48px 44px 50px;padding:10px 20px;font-family:'Marhey',sans-serif;font-size:20px;font-weight:700;cursor:pointer;width:100%;margin-top:0.5rem;">
     🔐 إدارة الأسئلة
   </button>
+  <div style="margin-top:auto;padding-top:1.5rem;text-align:center;">
+    <p style="font-family:'Georgia',serif;font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:0.5px;">Created by Moh AlBarrak © 2026</p>
+  </div>
 </div>
 <div class="game"><div class="game-inner">
 
@@ -438,6 +444,107 @@ const qBank={
       {q:'ما اسم ثاني أكبر مدينة في الكويت؟',a:'حولي',prize:0.5},
       {q:'ما اسم عملة المملكة العربية السعودية؟',a:'الريال السعودي',prize:0.5},
       {q:'ما اسم الجبل الذي نزل فيه الوحي؟',a:'جبل النور',prize:0.5},
+      {q:'ما اسم أول سورة في القرآن الكريم؟',a:'الفاتحة',prize:0.5},
+      {q:'كم عدد أجزاء القرآن الكريم؟',a:'30 جزءاً',prize:0.5},
+      {q:'ما اسم زوجة النبي محمد ﷺ الأولى؟',a:'خديجة رضي الله عنها',prize:0.5},
+      {q:'في أي مدينة وُلد النبي محمد ﷺ؟',a:'مكة المكرمة',prize:0.5},
+      {q:'ما اسم الركن الخامس من أركان الإسلام؟',a:'الحج',prize:0.5},
+      {q:'ما اسم أول أمير للكويت؟',a:'الشيخ صباح الأول',prize:0.5},
+      {q:'ما اسم العيد الوطني للكويت؟',a:'اليوم الوطني - 25 فبراير',prize:0.5},
+      {q:'كم لاعباً في فريق كرة السلة؟',a:'5 لاعبين',prize:0.5},
+      {q:'في أي دولة أُقيمت كأس العالم 2022؟',a:'قطر',prize:0.5},
+      {q:'كم دقيقة تستمر مباراة كرة القدم؟',a:'90 دقيقة',prize:0.5},
+      {q:'ما اسم بطولة كرة القدم الأوروبية الكبرى؟',a:'دوري أبطال أوروبا',prize:0.5},
+      {q:'كم عدد الجزر الكويتية؟',a:'9 جزر',prize:0.5},
+      {q:'ما اسم أطول سورة في القرآن الكريم؟',a:'البقرة',prize:1},
+      {q:'كم عدد أنبياء الله المذكورين في القرآن؟',a:'25 نبياً',prize:1},
+      {q:'ما اسم السورة التي تُعادل ثلث القرآن؟',a:'الإخلاص',prize:1},
+      {q:'ما اسم الصحابي الملقب بـ سيف الله المسلول؟',a:'خالد بن الوليد',prize:1},
+      {q:'كم ركعة في صلاة الظهر؟',a:'4 ركعات',prize:1},
+      {q:'ما اسم أول صحيفة كويتية؟',a:'الكويت',prize:1},
+      {q:'ما اسم الجزيرة الكويتية الأكبر؟',a:'جزيرة بوبيان',prize:1},
+      {q:'ما اسم أشهر سوق شعبي في الكويت؟',a:'سوق المباركية',prize:1},
+      {q:'ما اسم برج الكويت الشهير؟',a:'أبراج الكويت',prize:1},
+      {q:'كم مرة فازت البرازيل بكأس العالم؟',a:'5 مرات',prize:1},
+      {q:'ما اسم الدوري الإيطالي لكرة القدم؟',a:'سيريا A',prize:1},
+      {q:'من هو أكثر لاعب تسجيلاً للأهداف في تاريخ كأس العالم؟',a:'ميروسلاف كلوزه',prize:1},
+      {q:'ما اسم الدوري الألماني لكرة القدم؟',a:'البوندسليغا',prize:1},
+      {q:'ما اسم المعركة الأولى في الإسلام؟',a:'غزوة بدر',prize:1.5},
+      {q:'في أي سنة فُتحت مكة المكرمة؟',a:'السنة الثامنة للهجرة',prize:1.5},
+      {q:'ما اسم والدة النبي محمد ﷺ؟',a:'آمنة بنت وهب',prize:1.5},
+      {q:'ما اسم الملك الموكل بالوحي؟',a:'جبريل عليه السلام',prize:1.5},
+      {q:'كم عدد آيات سورة البقرة؟',a:'286 آية',prize:1.5},
+      {q:'في أي عام تأسست جامعة الكويت؟',a:'1966',prize:1.5},
+      {q:'ما اسم أول شركة نفط في الكويت؟',a:'شركة نفط الكويت KOC',prize:1.5},
+      {q:'ما اسم أشهر تمر كويتي؟',a:'الخلاص',prize:1.5},
+      {q:'في أي عام صدر أول دستور للكويت؟',a:'1962',prize:1.5},
+      {q:'من هو أسرع عداء في تاريخ الألعاب الأولمبية؟',a:'أوساين بولت',prize:1.5},
+      {q:'من هو الملاكم الأشهر الملقب بـ الأعظم؟',a:'محمد علي كلاي',prize:1.5},
+      {q:'كم مرة فازت ألمانيا بكأس العالم؟',a:'4 مرات',prize:1.5},
+      {q:'ما اسم الدوري الفرنسي لكرة القدم؟',a:'ليغ 1',prize:1.5},
+      {q:'في أي مدينة أُقيمت أول دورة ألعاب أولمبية حديثة؟',a:'أثينا 1896',prize:1.5},
+      {q:'ما اسم أول مسجد بُني في الإسلام؟',a:'مسجد قباء',prize:2},
+      {q:'كم عدد غزوات النبي محمد ﷺ؟',a:'27 غزوة',prize:2},
+      {q:'ما اسم الصحابي الذي أذّن أول مرة في الإسلام؟',a:'بلال بن رباح',prize:2},
+      {q:'ما اسم السورة التي لا تبدأ بالبسملة؟',a:'سورة التوبة',prize:2},
+      {q:'من هو أول رئيس وزراء للكويت؟',a:'الشيخ صباح السالم الصباح',prize:2},
+      {q:'في أي عام انضمت الكويت لجامعة الدول العربية؟',a:'1961',prize:2},
+      {q:'ما اسم المعركة البحرية التي انتصر فيها الكويتيون عام 1783؟',a:'معركة الرقة',prize:2},
+      {q:'ما اسم أول سفير كويتي في الأمم المتحدة؟',a:'عبدالله يعقوب بشارة',prize:2},
+      {q:'من هو أول عربي يفوز بميدالية أولمبية في الألعاب القوى؟',a:'هشام الكروج',prize:2},
+      {q:'من هو أول لاعب يفوز بخمس كرات ذهبية؟',a:'ليونيل ميسي',prize:2},
+      {q:'في أي دولة اخترع رياضة الباسكتبول؟',a:'الولايات المتحدة الأمريكية',prize:2},
+      {q:'كم مرة فاز محمد علي كلاي ببطولة العالم للملاكمة؟',a:'3 مرات',prize:2},
+      {q:'ما اسم أشهر عطر من براند Miss Dior؟',a:'Miss Dior',prize:0.5},
+      {q:'من أي دولة براند Zara؟',a:'إسبانيا',prize:0.5},
+      {q:'ما لون شعار براند Chanel؟',a:'أسود وأبيض',prize:0.5},
+      {q:'ما اسم أشهر حذاء من براند Nike؟',a:'Air Force 1',prize:0.5},
+      {q:'في أي نادٍ يلعب كيليان مبابي حالياً؟',a:'ريال مدريد',prize:0.5},
+      {q:'ما جنسية لاعب كرة القدم هالاند؟',a:'نرويجية',prize:0.5},
+      {q:'من هو حارس مرمى ليفربول الشهير؟',a:'أليسون بيكر',prize:0.5},
+      {q:'ما اسم نادي رونالدو الحالي؟',a:'النصر السعودي',prize:0.5},
+      {q:'ما اسم أشهر حقيبة من براند Hermès؟',a:'Birkin',prize:1},
+      {q:'من هو مؤسس براند Louis Vuitton؟',a:'لويس فيتون',prize:1},
+      {q:'ما البلد الأصلي لبراند Prada؟',a:'إيطاليا',prize:1},
+      {q:'ما اسم أشهر كريم من براند La Mer؟',a:'Crème de la Mer',prize:1},
+      {q:'ما اسم أشهر عطر من براند Yves Saint Laurent؟',a:'Black Opium',prize:1},
+      {q:'من هو المصمم الذي أسس براند Versace؟',a:'جياني فيرساتشي',prize:1},
+      {q:'ما اسم أشهر لون أحمر شفاه من MAC؟',a:'Ruby Woo',prize:1},
+      {q:'ما البلد الأصلي لبراند Burberry؟',a:'بريطانيا',prize:1},
+      {q:'ما اسم ملعب نادي ليفربول؟',a:'أنفيلد',prize:1},
+      {q:'كم مرة فاز ليفربول بدوري أبطال أوروبا؟',a:'6 مرات',prize:1},
+      {q:'ما اسم أشهر منافس لنادي ريال مدريد في إسبانيا؟',a:'برشلونة',prize:1},
+      {q:'من هو قائد المنتخب الكويتي الحالي؟',a:'بسام البداح',prize:1},
+      {q:'ما اسم ملعب نادي الأرسنال؟',a:'إميريتس',prize:1},
+      {q:'في أي مدينة يقع نادي مانشستر سيتي؟',a:'مانشستر',prize:1},
+      {q:'ما ألوان نادي الكويت الكروية؟',a:'أزرق وأبيض',prize:1},
+      {q:'من هو هداف نادي ريال مدريد التاريخي؟',a:'كريستيانو رونالدو',prize:1},
+      {q:'ما اسم أشهر عطر رجالي من براند Dior؟',a:'Sauvage',prize:1.5},
+      {q:'من هو المصمم الذي أطلق براند Saint Laurent؟',a:'إيف سان لوران',prize:1.5},
+      {q:'ما اسم أشهر مجموعة مكياج من Charlotte Tilbury؟',a:'Pillow Talk',prize:1.5},
+      {q:'ما البلد الأصلي لبراند Balenciaga؟',a:'إسبانيا',prize:1.5},
+      {q:'من هو مدير إبداعي Chanel الأشهر؟',a:'كارل لاغرفيلد',prize:1.5},
+      {q:'ما اسم أشهر حقيبة من Chanel؟',a:'Classic Flap',prize:1.5},
+      {q:'ما اسم أشهر عطر من Creed؟',a:'Aventus',prize:1.5},
+      {q:'من هو مؤسس براند Givenchy؟',a:'هوبير دو جيفنشي',prize:1.5},
+      {q:'كم بطولة دوري إنجليزي فاز بها مانشستر يونايتد؟',a:'20 بطولة',prize:1.5},
+      {q:'من هو المدرب الأسطوري لمانشستر يونايتد؟',a:'السير أليكس فيرغسون',prize:1.5},
+      {q:'ما اسم الكأس المحلية الإنجليزية الأعرق؟',a:'كأس FA',prize:1.5},
+      {q:'من هو أكثر لاعب تسجيلاً في تاريخ الدوري الإسباني؟',a:'ليونيل ميسي',prize:1.5},
+      {q:'ما اسم أشهر لاعب في تاريخ نادي القادسية الكويتي؟',a:'باسم مرشد',prize:1.5},
+      {q:'في أي عام فاز الكويت ببطولة خليجي؟',a:'2010',prize:1.5},
+      {q:'ما اسم الدوري الكويتي الممتاز؟',a:'دوري KNPC',prize:1.5},
+      {q:'ما اسم أغلى حقيبة في العالم من Hermès؟',a:'Himalaya Birkin',prize:2},
+      {q:'من هو المصمم الذي ابتكر فستان الـ little black dress؟',a:'كوكو شانيل',prize:2},
+      {q:'ما اسم معرض الموضة الأشهر في العالم؟',a:'أسبوع الموضة في باريس',prize:2},
+      {q:'من هو مدير إبداعي Louis Vuitton الحالي؟',a:'نيكولا غيسكيير',prize:2},
+      {q:'ما اسم أول عارضة أزياء كويتية تصل للعالمية؟',a:'هيفاء وهبي ليست كويتية - الإجابة الصحيحة: شيخة الجاسم',prize:2},
+      {q:'كم مرة فاز ريال مدريد بالدوري الإسباني؟',a:'35 مرة',prize:2},
+      {q:'من هو أعلى مسجل للأهداف في تاريخ الدوري الإنجليزي؟',a:'آلان شيرر',prize:2},
+      {q:'ما اسم أكبر منافسة في الدوري الإنجليزي بين مانشستر يونايتد وليفربول؟',a:'النورث ويست ديربي',prize:2},
+      {q:'كم مرة فاز برشلونة بدوري أبطال أوروبا؟',a:'5 مرات',prize:2},
+      {q:'من هو أكثر لاعب تتويجاً بالدوري الإنجليزي كلاعب؟',a:'ريان غيغز',prize:2},
+      {q:'ما اسم الملعب الذي يُقام فيه نهائي دوري أبطال أوروبا موسم 2025؟',a:'ملعب أتاتورك - إسطنبول',prize:2},
     ],
     m:[
       {q:'كم لاعباً في فريق كرة القدم؟',a:'١١ لاعباً',prize:0.5},
@@ -557,7 +664,7 @@ const catMeta={
 function toAr(n){return String(n);}
 function fmt(v){if(v===0.5)return '0.5 د';if(v===0.25)return '0.25 د';if(v%1===0)return v+' د';return v+' د';}
 let S={mode:null,cat:null,gender:null,jokerUsed:false,qIdx:0,earned:0,pool:[],history:[],spTimer:null,spTime:60,spQueue:[],spSkipped:[],spCurrentIsRetry:false,spAnswered:0,spCorrect:0,spSkipCount:0,spHistory:[],_currentQ:null};
-function buildPool(cat,gender,count){const base=qBank[cat];let pool=[...base.all];if(gender==='m'&&base.m)pool=pool.concat(base.m);if(gender==='f'&&base.f)pool=pool.concat(base.f);return pool.sort(()=>Math.random()-0.5).slice(0,count);}
+function buildPool(cat,gender,count){const base=qBank[cat];let pool=[...base.all];if(gender==='m'&&base.m&&base.m.length>0)pool=[...base.all,...base.m];else if(gender==='f'&&base.f&&base.f.length>0)pool=[...base.all,...base.f];return pool.sort(()=>Math.random()-0.5).slice(0,count);}
 function selectMode(m,el){S.mode=m;document.querySelectorAll('.mode-card').forEach(c=>c.classList.remove('selected'));el.classList.add('selected');document.getElementById('homeNext').disabled=false;updateCatDetails();}
 function selectCat(c,el){S.cat=c;document.querySelectorAll('.cat-card').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');document.getElementById('catNext').disabled=false;}
 function selectGender(g,el){S.gender=g;document.querySelectorAll('.gender-btn').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');document.getElementById('genderNext').disabled=false;}
@@ -609,8 +716,8 @@ function spMarkScore(status){
 }
 function spAnswer(status){const cfg=spConfig[S.cat],q=S._currentQ;if(!q)return;if(status==='skip'&&!S.spCurrentIsRetry){S.spSkipped.push(q);S.spSkipCount++;document.getElementById('spSkipCount').textContent=toAr(S.spSkipped.length);renderSpQ();return;}let finalStatus;if(status==='review'){finalStatus='review';}else{finalStatus=S.spCurrentIsRetry?(status==='correct'?'retry-correct':'retry-wrong'):status;}S.spHistory.push({q:q.q,a:q.a,status:finalStatus,prize:cfg.prize,isRetry:S.spCurrentIsRetry});if(status==='correct')S.spCorrect++;S.spAnswered++;renderSpQ();}
 function calcSpEarned(){const cfg=spConfig[S.cat];return parseFloat((S.spHistory.filter(h=>h.status==='correct'||h.status==='retry-correct').length*cfg.prize).toFixed(2));}
-function showResult(mode){clearInterval(S.spTimer);go('s-result');setTimeout(()=>{const amt=parseFloat(document.getElementById('resultAmount').textContent);playWinSound(amt);launchConfetti();},300);const meta=catMeta[S.cat];if(mode==='classic'){document.getElementById('editNote').style.display='none';const final=Math.max(S.earned,meta.min);document.getElementById('resultAmount').textContent=fmt(final);document.getElementById('finalTotal').textContent=fmt(final);document.getElementById('resultMsg').textContent=S.earned>0?'أحسنت! إجاباتك أوصلتك لهذا المبلغ 🎉':'لا أحد يخرج بدون عيدية! هذه عيديتك المضمونة 🎁';const correct=S.history.filter(h=>h.correct).length;document.getElementById('statsRow').innerHTML=`<div class="stat-card"><div class="stat-val purple">${toAr(S.history.length)} من ٥</div><div class="stat-lbl">عُرض</div></div><div class="stat-card"><div class="stat-val green">${toAr(correct)}</div><div class="stat-lbl">صح</div></div><div class="stat-card"><div class="stat-val red">${toAr(S.history.length-correct)}</div><div class="stat-lbl">خطأ</div></div>`;const list=document.getElementById('summaryList');list.innerHTML='';S.history.forEach(h=>{const row=document.createElement('div');row.className='summary-item';row.innerHTML=`<div class="summary-body"><div class="summary-q">${h.correct?'✅':'❌'} ${h.q}</div></div><div class="prize-tag">${h.correct?fmt(h.prize):'-'}</div>`;list.appendChild(row);});}else{document.getElementById('editNote').style.display='inline-block';const earned=calcSpEarned(),final=Math.max(earned,meta.min);document.getElementById('resultAmount').textContent=fmt(final);document.getElementById('finalTotal').textContent=fmt(final);document.getElementById('resultMsg').textContent=`أحسنت! أجبت صح على ${toAr(S.spCorrect)} سؤالاً 🎉`;const cfg=spConfig[S.cat],shown=S.spHistory.length;const correct=S.spHistory.filter(h=>h.status==='correct'||h.status==='retry-correct').length;const wrong=S.spHistory.filter(h=>h.status==='wrong'||h.status==='retry-wrong').length;const skipped=S.spHistory.filter(h=>h.status==='skip').length;const review=S.spHistory.filter(h=>h.status==='review').length;document.getElementById('statsRow').innerHTML=`<div class="stat-card"><div class="stat-val purple">${toAr(shown)} من ${toAr(cfg.count)}</div><div class="stat-lbl">عُرض</div></div><div class="stat-card"><div class="stat-val green">${toAr(correct)}</div><div class="stat-lbl">صح</div></div><div class="stat-card"><div class="stat-val red">${toAr(wrong)}</div><div class="stat-lbl">خطأ</div></div><div class="stat-card"><div class="stat-val amber">${toAr(skipped)}</div><div class="stat-lbl">تخطى</div></div>${review>0?`<div class="stat-card"><div class="stat-val purple">${toAr(review)}</div><div class="stat-lbl">مراجعة</div></div>`:''}}`;renderSpSummary();}}
-function renderSpSummary(){const list=document.getElementById('summaryList');list.innerHTML='';S.spHistory.forEach((h,i)=>{const row=document.createElement('div');row.className='summary-item'+(h.status==='review'?' review-item':'');row.innerHTML=`<div class="summary-controls"><button class="status-btn ${h.status==='correct'||h.status==='retry-correct'?'active-correct':''}" onclick="editSpStatus(${i},'correct')">✅</button><button class="status-btn ${h.status==='wrong'||h.status==='retry-wrong'?'active-wrong':''}" onclick="editSpStatus(${i},'wrong')">❌</button>${!h.isRetry?`<button class="status-btn ${h.status==='skip'?'active-skip':''}" onclick="editSpStatus(${i},'skip')">⏭</button>`:'<div style="width:28px"></div>'}</div><div class="summary-body"><div class="summary-q">${h.status==='review'?'🔍 ':h.isRetry?'🔄 ':''}${h.q}</div><div class="summary-a">${h.a}</div></div><div class="prize-tag" id="sptag-${i}">${h.status==='correct'||h.status==='retry-correct'?fmt(h.prize):'-'}</div>`;list.appendChild(row);});}
+function showResult(mode){clearInterval(S.spTimer);go('s-result');setTimeout(()=>{const amt=parseFloat(document.getElementById('resultAmount').textContent);playWinSound(amt);launchConfetti();},300);const meta=catMeta[S.cat];if(mode==='classic'){document.getElementById('editNote').style.display='none';const final=Math.max(S.earned,meta.min);document.getElementById('resultAmount').textContent=fmt(final);document.getElementById('finalTotal').textContent=fmt(final);document.getElementById('resultMsg').textContent=S.earned>0?'أحسنت! إجاباتك أوصلتك لهذا المبلغ 🎉':'لا أحد يخرج بدون عيدية! هذه عيديتك المضمونة 🎁';const correct=S.history.filter(h=>h.correct).length;document.getElementById('statsRow').innerHTML=`<div class="stat-card"><div class="stat-val purple">${toAr(S.history.length)} من ٥</div><div class="stat-lbl">عُرض</div></div><div class="stat-card"><div class="stat-val green">${toAr(correct)}</div><div class="stat-lbl">صح</div></div><div class="stat-card"><div class="stat-val red">${toAr(S.history.length-correct)}</div><div class="stat-lbl">خطأ</div></div>`;const list=document.getElementById('summaryList');list.innerHTML='';S.history.forEach(h=>{const row=document.createElement('div');row.className='summary-item';row.innerHTML=`<div class="summary-body"><div class="summary-q">${h.correct?'✅':'❌'} ${h.q}</div></div><div class="prize-tag">${h.correct?fmt(h.prize):'-'}</div>`;list.appendChild(row);});}else{document.getElementById('editNote').style.display='inline-block';const earned=calcSpEarned(),final=Math.max(earned,meta.min);document.getElementById('resultAmount').textContent=fmt(final);document.getElementById('finalTotal').textContent=fmt(final);document.getElementById('resultMsg').textContent=`أحسنت! أجبت صح على ${toAr(S.spCorrect)} سؤالاً 🎉`;const cfg=spConfig[S.cat],shown=S.spHistory.length;const correct=S.spHistory.filter(h=>h.status==='correct'||h.status==='retry-correct').length;const wrong=S.spHistory.filter(h=>h.status==='wrong'||h.status==='retry-wrong').length;const skipped=S.spHistory.filter(h=>h.status==='skip').length;const review=S.spHistory.filter(h=>h.status==='review').length;document.getElementById('statsRow').innerHTML='<div class="stat-card"><div class="stat-val purple">'+toAr(shown)+' من '+toAr(cfg.count)+'</div><div class="stat-lbl">عُرض</div></div><div class="stat-card"><div class="stat-val green">'+toAr(correct)+'</div><div class="stat-lbl">صح</div></div><div class="stat-card"><div class="stat-val red">'+toAr(wrong)+'</div><div class="stat-lbl">خطأ</div></div><div class="stat-card"><div class="stat-val amber">'+toAr(skipped)+'</div><div class="stat-lbl">تخطى</div></div>'+(review>0?'<div class="stat-card"><div class="stat-val purple">'+toAr(review)+'</div><div class="stat-lbl">مراجعة</div></div>':'');renderSpSummary();}}
+function renderSpSummary(){const list=document.getElementById('summaryList');list.innerHTML='';if(S.spHistory.length===0){list.innerHTML='<div style="text-align:center;color:#185FA5;font-size:22px;padding:1rem;">لا توجد أسئلة</div>';return;}S.spHistory.forEach((h,i)=>{const row=document.createElement('div');row.className='summary-item'+(h.status==='review'?' review-item':'');row.innerHTML=`<div class="summary-controls"><button class="status-btn ${h.status==='correct'||h.status==='retry-correct'?'active-correct':''}" onclick="editSpStatus(${i},'correct')">✅</button><button class="status-btn ${h.status==='wrong'||h.status==='retry-wrong'?'active-wrong':''}" onclick="editSpStatus(${i},'wrong')">❌</button>${!h.isRetry?`<button class="status-btn ${h.status==='skip'?'active-skip':''}" onclick="editSpStatus(${i},'skip')">⏭</button>`:'<div style="width:28px"></div>'}</div><div class="summary-body"><div class="summary-q">${h.status==='review'?'🔍 مراجعة — ':h.isRetry?'🔄 ':'' }${h.q}</div><div class="summary-a">${h.a}</div></div><div class="prize-tag" id="sptag-${i}">${h.status==='correct'||h.status==='retry-correct'?fmt(h.prize):'-'}</div>`;list.appendChild(row);});}
 function editSpStatus(idx,newStatus){const h=S.spHistory[idx];const wasCorrect=h.status==='correct'||h.status==='retry-correct';h.status=h.isRetry?(newStatus==='correct'?'retry-correct':'retry-wrong'):newStatus;const isNowCorrect=h.status==='correct'||h.status==='retry-correct';if(wasCorrect&&!isNowCorrect)S.spCorrect--;if(!wasCorrect&&isNowCorrect)S.spCorrect++;renderSpSummary();const meta=catMeta[S.cat],cfg=spConfig[S.cat];const earned=calcSpEarned(),final=Math.max(earned,meta.min);document.getElementById('resultAmount').textContent=fmt(final);document.getElementById('finalTotal').textContent=fmt(final);const shown=S.spHistory.length;const correct=S.spHistory.filter(h=>h.status==='correct'||h.status==='retry-correct').length;const wrong=S.spHistory.filter(h=>h.status==='wrong'||h.status==='retry-wrong').length;const skipped=S.spHistory.filter(h=>h.status==='skip').length;const review=S.spHistory.filter(h=>h.status==='review').length;document.getElementById('statsRow').innerHTML=`<div class="stat-card"><div class="stat-val purple">${toAr(shown)} من ${toAr(cfg.count)}</div><div class="stat-lbl">عُرض</div></div><div class="stat-card"><div class="stat-val green">${toAr(correct)}</div><div class="stat-lbl">صح</div></div><div class="stat-card"><div class="stat-val red">${toAr(wrong)}</div><div class="stat-lbl">خطأ</div></div><div class="stat-card"><div class="stat-val amber">${toAr(skipped)}</div><div class="stat-lbl">تخطى</div></div>${review>0?`<div class="stat-card"><div class="stat-val purple">${toAr(review)}</div><div class="stat-lbl">مراجعة      <button onclick="go('s-home')" style="background:#A8D4F5;color:#0C447C;border:4px solid #fff;border-radius:50px;padding:8px 20px;font-family:'Marhey',sans-serif;font-size:20px;cursor:pointer;">← رجوع</button>
     </div>
 
